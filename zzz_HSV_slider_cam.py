@@ -1,3 +1,6 @@
+### version ###
+# 20240220.1028 : add print string
+
 import cv2
 import numpy as np
 import math
@@ -138,3 +141,5 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
+
+print(f'[np.array([ {hue1}, {saturation1}, {value1}]), np.array([ {hue2}, {saturation2}, {value2}])]')
