@@ -1,0 +1,25 @@
+
+Main Workflow
+1. webcam
+    1.1 ใช้กล้องเพื่อแยก object ตามสี
+    1.2 วาดกล่องครอบ object แต่ละสีที่ตรวจจับได้
+    1.3 จัดเก็บข้อมูล object (x, y, angle, สี) แต่ละชิ้น ตามลำดับ
+2. dobot
+    2.1 ทดสอบ function พื้นฐาน (ขยับ, ดูด, ปล่อย)
+3. map workspace ของ dobot เข้ากับ webcam
+    3.1 calibrate distortion ของกล้อง
+    3.2 ใช้โปรแกรม M1Studio หา Workspace ของ dobot xy min-max
+    3.3 จัดตำแหน่งกล้องให้มองเห็นครอบคลุม workspace ของ dobot
+    3.4 หมุนกล้องให้แกน xy ขนาน/ตั้งฉาก กับการเคลื่อนที่ตามแกน xy ของ dobot
+    3.5 หาตำแหน่ง xy min-max ของ webcam เทียบกับ xy min-max ของ dobot
+    3.6 สร้าง logic เพื่อ map workspace ของ กล้อง กับ dobot เข้าด้วยกัน
+4. webcam + dobot
+    4.1 ป้อนตำแหน่ง(pixel)จากกล้อง เข้า logic(function) คำนวณส่งไปทดสอบตำแหน่ง dobot
+    4.2 ทดสอบให้ dobot วิ่งตามลำดับที่ได้จาก 1.2 ผ่าน function คำนวณ
+    4.3 เพิ่ม dobot ยกขึ้นลง, ดูดเป่า, ตำแหน่งปล่อย
+5. fine tune
+    5.1 ตำแหน่งกล้อง ยกขึ้นลง/หมุนให้ได้ฉาก/มุมลงพื้น
+    5.2 upper/lower bound ของ hsv mask
+    5.3 map webcam-dobot
+    5.4 dobot z axis
+    
